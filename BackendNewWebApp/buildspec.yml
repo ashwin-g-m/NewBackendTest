@@ -1,0 +1,24 @@
+﻿version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      dotnet: 8.0  # Specify your .NET version here
+    commands:
+      - echo Installing dependencies...
+      - dotnet restore  # Restore dependencies
+
+  build:
+    commands:
+      - echo Building the application...
+      - dotnet build --configuration Release  # Build the application
+
+  post_build:
+    commands:
+      - echo Packaging the application...
+      - dotnet publish --configuration Release --output ./publish  # Publish the application to a folder
+
+artifacts:
+  files:
+    - publish/**/*  # Include all files in the publish directory
+  base-directory: publish  # Set the base directory for artifacts

@@ -1,0 +1,6 @@
+@BackendNewWebApp_HostAddress = http://ashwin-test-webapp-env.eba-jwptnmcr.us-east-1.elasticbeanstalk.com/
+
+GET {{BackendNewWebApp_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
