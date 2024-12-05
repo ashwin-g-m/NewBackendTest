@@ -1,8 +1,0 @@
-﻿branch-defaults:
-  default:
-    environment: Ashwin-test-webapp-env  # Replace with your environment name
-global:
-  application: Ashwin-test-webapp  # Replace with your application name
-  default_ec2_keyname: Ashwin-EC2-WebApp-key-pair  # Replace with your EC2 key pair name
-  default_platform: NET Core 8  # Replace with your .NET Core version
-  default_region: us-east-1  # Replace with your AWS regions

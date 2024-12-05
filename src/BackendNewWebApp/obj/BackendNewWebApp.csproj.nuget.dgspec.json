@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ashwin.Gopi\\Desktop\\React backend\\BackendNewWebApp\\BackendNewWebApp\\BackendNewWebApp.csproj": {}
+    "C:\\Users\\Ashwin.Gopi\\Testing\\NewBackendTest\\src\\BackendNewWebApp\\BackendNewWebApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ashwin.Gopi\\Desktop\\React backend\\BackendNewWebApp\\BackendNewWebApp\\BackendNewWebApp.csproj": {
+    "C:\\Users\\Ashwin.Gopi\\Testing\\NewBackendTest\\src\\BackendNewWebApp\\BackendNewWebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ashwin.Gopi\\Desktop\\React backend\\BackendNewWebApp\\BackendNewWebApp\\BackendNewWebApp.csproj",
+        "projectUniqueName": "C:\\Users\\Ashwin.Gopi\\Testing\\NewBackendTest\\src\\BackendNewWebApp\\BackendNewWebApp.csproj",
         "projectName": "BackendNewWebApp",
-        "projectPath": "C:\\Users\\Ashwin.Gopi\\Desktop\\React backend\\BackendNewWebApp\\BackendNewWebApp\\BackendNewWebApp.csproj",
+        "projectPath": "C:\\Users\\Ashwin.Gopi\\Testing\\NewBackendTest\\src\\BackendNewWebApp\\BackendNewWebApp.csproj",
         "packagesPath": "C:\\Users\\Ashwin.Gopi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ashwin.Gopi\\Desktop\\React backend\\BackendNewWebApp\\BackendNewWebApp\\obj\\",
+        "outputPath": "C:\\Users\\Ashwin.Gopi\\Testing\\NewBackendTest\\src\\BackendNewWebApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Ashwin.Gopi\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -62,20 +62,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Runtime.linux-x64",
-              "version": "[8.0.10, 8.0.10]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.linux-x64",
-              "version": "[8.0.10, 8.0.10]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Runtime.linux-x64",
-              "version": "[8.0.10, 8.0.10]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -85,11 +71,6 @@
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
-        }
-      },
-      "runtimes": {
-        "linux-x64": {
-          "#import": []
         }
       }
     }

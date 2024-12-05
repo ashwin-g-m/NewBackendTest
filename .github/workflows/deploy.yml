@@ -1,0 +1,44 @@
+﻿name: Deploy to Elastic Beanstalk
+
+on:
+  push:
+    branches:
+      - main  # Trigger the action on push to the main branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Ubuntu is recommended for Linux-based Elastic Beanstalk deployments
+
+    steps:
+      # Step 1: Check out the repository
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      # Step 2: Set up .NET SDK (Updated to .NET 8.0)
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3  # Updated to v3 as the latest stable version
+        with:
+          dotnet-version: '8.0'  # Specify .NET 8.0
+
+      # Step 3: Restore dependencies
+      - name: Restore dependencies
+        run: dotnet restore
+
+      # Step 4: Build the application
+      - name: Build the app
+        run: dotnet build --configuration Release
+
+      # Step 5: Publish the application
+      - name: Publish the app
+        run: dotnet publish --configuration Release --output ./publish
+
+      # Step 6: Deploy to AWS Elastic Beanstalk
+      - name: Deploy to Elastic Beanstalk
+        uses: appleboy/ssh-action@v0.1.7
+        with:
+          host: ${{ secrets.EB_HOST }}  # Your Elastic Beanstalk environment URL
+          username: ${{ secrets.EB_USERNAME }}  # SSH username for your Elastic Beanstalk instance
+          key: ${{ secrets.EB_SSH_KEY }}  # The private SSH key stored in GitHub secrets
+          script: |
+            eb init -p "dotnetcore" Ashwin-test-webapp --region us-east-1  # Replace with your Elastic Beanstalk application name and region
+            eb deploy
