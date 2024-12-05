@@ -3,11 +3,11 @@
 on:
   push:
     branches:
-      - main  # Trigger the action on push to the main branch
+      - main  #Trigger the action on push to the main branch
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # Ubuntu is recommended for Linux-based Elastic Beanstalk deployments
+    runs-on: ubuntu-latest  #Ubuntu recommended for Linux-based E. Beanstalk deployments
 
     steps:
       # Step 1: Check out the repository
@@ -18,19 +18,22 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v3  # Updated to v3 as the latest stable version
         with:
-          dotnet-version: '8.0'  # Specify .NET 8.0
+          dotnet-version: '8.0'  
 
       # Step 3: Restore dependencies
       - name: Restore dependencies
-        run: dotnet restore
+        run: dotnet restore ./BackendNewWebApp.sln
+	working-directory: ./src      # Set correct working directory where solution file
 
       # Step 4: Build the application
       - name: Build the app
-        run: dotnet build --configuration Release
+        run: dotnet build ./BackendNewWebApp/BackendNewWebApp.csproj
+	working-directory: ./src
 
       # Step 5: Publish the application
       - name: Publish the app
-        run: dotnet publish --configuration Release --output ./publish
+        run: dotnet publish ./BackendNewWebApp/BackendNewWebApp.csproj -c Release -o ./publish
+	working-directory: ./src
 
       # Step 6: Deploy to AWS Elastic Beanstalk
       - name: Deploy to Elastic Beanstalk
